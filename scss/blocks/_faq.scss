@@ -1,0 +1,85 @@
+.faq {
+  @include reset-list;
+  max-width: 730px;
+}
+
+.faq__item {
+  display: block;
+  background: #f2f5f9;
+  margin-bottom: 16px;
+  max-width: 720px;
+  overflow: hidden;
+  height: 92px;
+}
+
+.faq__item:hover {
+  background: #fff4df;
+}
+
+.faq__item:last-child {
+  margin: 0;
+}
+
+.faq__title {
+  padding: 32px 40px;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &::after {
+    flex-shrink: 0;
+    margin-left: 16px;
+    content: "";
+    background: url("../../img/arrow-down.svg") no-repeat;
+    width: 20px;
+    height: 12px;
+    transition: transform 0.3s;
+  }
+}
+
+.faq__item--opened {
+  height: auto;
+  .faq__title::after {
+    transform: rotate(180deg);
+  }
+}
+
+.faq__description {
+  display: block;
+  font-size: 15px;
+  @include reset-desc;
+  margin-top: -7px;
+  padding: 0 40px 32px;
+}
+
+@media only screen and (max-width: $tablet) {
+  .faq__item {
+    background: #f2f5f9;
+    margin-bottom: 24px;
+    max-width: 689px;
+  }
+
+  .faq__title {
+    padding: 32px 32px 32px 40px;
+  }
+
+  .faq__description {
+    padding: 0 32px 32px 40px;
+  }
+}
+
+@media only screen and (max-width: $mobile) {
+  .faq__title {
+    padding: 32px 28px 32px 32px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .faq__description {
+    padding: 0 28px 32px 32px;
+  }
+}

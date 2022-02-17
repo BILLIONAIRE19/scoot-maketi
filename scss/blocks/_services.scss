@@ -1,0 +1,152 @@
+.services {
+  padding: 160px 0 200px;
+}
+
+.services__container {
+  width: 1275px;
+  position: relative;
+
+  &::after {
+    right: 300px;
+    height: 15px;
+    position: absolute;
+    background-image: url("../../img/liner.svg");
+    content: "";
+    background-color: rgba(229, 236, 244, 1);
+    top: 41px;
+    left: -1000px;
+    z-index: -1;
+  }
+}
+
+.services__list {
+  display: flex;
+  @include reset-list;
+}
+
+.services__item {
+  margin-right: 30px;
+  width: 350px;
+}
+
+.services__item:last-child {
+  margin-right: 0;
+}
+
+.services__item::before {
+  display: block;
+  width: 96px;
+  height: 96px;
+  content: "";
+  background-color: $accent;
+  border-radius: 50%;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.services__item--locate::before {
+  background-image: url("../../img/locate-with-app.svg");
+}
+
+.services__item--pick::before {
+  background-image: url("../../img/pick-scooter.svg");
+}
+
+.services__item--enjoy::before {
+  background-image: url("../../img/ride.svg");
+}
+
+.services__title {
+  margin: 40px 0 27px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -1.07143px;
+  color: #495567;
+}
+
+.services__desc {
+  @include reset-desc;
+}
+
+@media only screen and (max-width: $tablet) {
+  .services {
+    padding: 122px 0 145px;
+  }
+
+  .services__container {
+    &::after {
+      top: -1000px;
+      left: 56px;
+      bottom: 80px;
+      right: unset;
+      height: unset;
+      width: 15px;
+    }
+  }
+
+  .services__list {
+    flex-direction: column;
+  }
+
+  .services__item {
+    margin-bottom: 40px;
+    display: flex;
+    margin-right: 0;
+    width: unset;
+
+    &::before {
+      flex-shrink: 0;
+      margin-right: 79px;
+    }
+  }
+
+  .services__title {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: $mobile) {
+  .services {
+    padding: 120px;
+  }
+
+  .services__container {
+    &::after {
+      display: none;
+    }
+  }
+
+  .services__item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 48px;
+
+    &::before {
+      width: 56px;
+      height: 56px;
+      margin: 0;
+    }
+  }
+
+  .services__item--locate::before {
+    background-image: url("../../img/locate-with-app-mobile.svg");
+  }
+
+  .services__item--pick::before {
+    background-image: url("../../img/pick-scooter-mobile.svg");
+  }
+
+  .services__item--enjoy::before {
+    background-image: url("../../img/ride-mobile.svg");
+  }
+
+  .services__title {
+    margin: 24px 0;
+    font-size: 20px;
+    line-height: 28px;
+  }
+}

@@ -1,0 +1,185 @@
+.intro {
+  background-image: url("../../img/intro-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: cover;
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    background-image: url("../../img/intro-bg@2x.jpg");
+  }
+}
+
+.intro--inner {
+  background-image: url("../../img/about-bg.jpg");
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    background-image: url("../../img/about-bg@2x.jpg");
+  }
+
+  margin-bottom: 120px;
+}
+
+.intro__container {
+  padding: 153px 0 152px;
+}
+
+.intro__container--inner {
+  padding: 72px 0;
+}
+
+.intro__content {
+  width: 500px;
+  margin-left: 57px;
+}
+
+.intro__title {
+  margin: 0;
+  font-size: 56px;
+  line-height: 56px;
+  letter-spacing: -2px;
+  color: #fff;
+}
+
+.intro__description {
+  @include reset-desc;
+  padding: 40px 0;
+  margin: 0;
+  margin: 0 40px 0 95px;
+  width: 405px;
+  color: #fff;
+  position: relative;
+
+  &::before {
+    width: 202px;
+    height: 15px;
+    display: block;
+    background-image: url("../img/line.svg");
+    content: "";
+    position: absolute;
+    top: 90px;
+    right: calc(100% + 57px);
+  }
+
+  &::after {
+    width: 452px;
+    height: 151px;
+    display: block;
+    background-image: url("../../img/intro-arrow.svg");
+    content: "";
+    position: absolute;
+    top: 90px;
+    left: calc(100% + 40px);
+  }
+}
+
+.intro__main-link--get {
+  margin-left: 95px;
+}
+
+@media only screen and (max-width: $tablet) {
+  .intro--inner {
+    background-image: url("../../img/about-bg-tablet.jpg");
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (min--moz-device-pixel-ratio: 2),
+      only screen and (-o-min-device-pixel-ratio: 2/1),
+      only screen and (min-device-pixel-ratio: 2),
+      only screen and (min-resolution: 192dpi),
+      only screen and (min-resolution: 2dppx) {
+      background-image: url("../../img/about-bg-tablet@2x.jpg");
+    }
+
+    margin-bottom: 144px;
+  }
+
+  .intro__container {
+    padding: 137px 0 217px;
+  }
+
+  .intro__container--inner {
+    padding: 72px 0;
+  }
+
+  .intro__content {
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .intro__description {
+    padding: 24px 0 32px;
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      top: calc(100% + 93px);
+      left: unset;
+      right: 350px;
+    }
+  }
+
+  .intro__description,
+  .intro__main-link--get {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: $mobile) {
+  .intro--inner {
+    background-image: url("../../img/about-bg-mobile.jpg");
+    background-position: center center;
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (min--moz-device-pixel-ratio: 2),
+      only screen and (-o-min-device-pixel-ratio: 2/1),
+      only screen and (min-device-pixel-ratio: 2),
+      only screen and (min-resolution: 192dpi),
+      only screen and (min-resolution: 2dppx) {
+      background-image: url("../../img/about-bg-mobile@2x.jpg");
+    }
+
+    margin-bottom: 72px;
+  }
+
+  .intro__container {
+    padding: 115px 0 179px;
+  }
+
+  .intro__container--inner {
+    padding: 60px 0;
+  }
+
+  .intro__title {
+    font-size: 40px;
+    line-height: 40px;
+    text-align: center;
+  }
+
+  .intro__description {
+    padding: 24px 0 34px;
+
+    &::after {
+      top: calc(100% + 62px);
+      right: 208px;
+    }
+  }
+
+  .intro__content,
+  .intro__description {
+    width: 311px;
+  }
+}
